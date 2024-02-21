@@ -1,0 +1,43 @@
+<a routerLink="/login" class="btn btn-warning" style="float: right; margin-top: -60px;">LOGOUT</a>
+<div class="text-center">
+  <br><br>
+<h3>View all results here</h3>
+        <a routerLink="/create" class="btn btn-success">Create New</a>
+<div class="container mt-5">
+
+    <!-- show message -->
+    <div *ngIf="successmsg" class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{successmsg}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">S I.D.</th>
+            <th scope="col">RollNumber</th>
+            <th scope="col">FullName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Score</th>
+            <th scope="col">Edits</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let us of readData'>
+            <th scope="row">{{us.id}}</th>
+            <th>{{us.rollnumber}}</th>
+            <td>{{us.name}}</td>
+            <td>{{us.email}}</td>
+            <td>{{us.score}}</td>
+            <td>
+                <button class="btn btn-sm btn-danger"  (click)="deleteID(us.id)" >Delete</button>
+                &nbsp;
+                <a [routerLink]="['/create',us.id]"  class="btn btn-sm btn-success">Update</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>
+</div>
+

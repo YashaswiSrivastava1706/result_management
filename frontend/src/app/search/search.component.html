@@ -1,0 +1,46 @@
+
+<div class="text-center">
+
+  <h3>Your result is here..!!</h3>
+  <div *ngIf="errormsg" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{errormsg}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+  <form  [formGroup]="resultForm" *ngIf="!errormsg">
+    <div class="form-group">
+      <label>Roll Number</label>
+      <!-- <input type="hidden" class="form-control"  formControlName="rollnumber" aria-describedby="emailHelp" *ngIf="errormsg" placeholder="No Data Found" readonly> -->
+      <input type="text" class="form-control"  formControlName="rollnumber" aria-describedby="emailHelp" *ngIf="!errormsg" placeholder="No Data Found" readonly>
+      
+    </div>
+    <div class="form-group">
+      <label>Full Name</label>
+      <input type="text" class="form-control"  formControlName="name" aria-describedby="emailHelp" placeholder="No Data Found" readonly>
+    </div>
+
+    <div class="form-group" style="justify-content: center;">
+      <label>Email</label>
+      <input type="text" class="form-control" formControlName="email"  placeholder="No Data Found"  readonly>
+    </div>
+
+    <div class="form-group">
+      <label>Score</label>
+      <input type="text" class="form-control" formControlName="score"  placeholder="No Data Found"  readonly>
+      <small id="emailHelp" class="form-text text-muted">Koi naa agli baar aache aa jayenge!!!</small>
+    </div>
+
+    
+
+    <!-- <div class="form-group">
+      <label for="exampleInputPassword1">Result</label>
+      <input type="text" class="form-control" formControlName="id" placeholder="Result">
+    </div> -->
+
+  </form>
+  <a routerLink="/login" class="btn btn-warning">BACK</a>
+        </div></div>
+</div>
+</div>
